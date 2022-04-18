@@ -4,17 +4,16 @@ services:
   db:
     image: mysql:5.5
     ports:
-      - "3306:3306"
+      - "3307:3307"
     volumes:
       - db_data:/var/lib/mysql
-      - .:/app
     environment:
       MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_USER: ${DATABASE_USER}
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b "0.0.0.0"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     env_file:
       - .env
     volumes:

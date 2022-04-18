@@ -7,10 +7,43 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+  <style>
+    .main {
+      width: 80%;
+      margin: auto;
+    }
+    .header {
+      display: flex;
+    }
+    .header  .title-page {
+      margin-left: 20px;
+    }
+    .header form {
+      padding: 20px;
+      margin-left: auto;
+    }
+  </style>
 
   <body>
-    <%= yield %>
+    <div class="main">
+      <div class="header">
+        <i class="fa fa-home fa-3x" aria-hidden="true"></i>
+        <h3 class="title-page">Funny movies</h3>
+        <form>
+          <input type="text" id="email" name="fname" placeholder="email">
+          <input type="password" id="password" name="password" placeholder="password">
+          <input type="submit" value="Submit">
+          <button type="button">Register</button>
+        </form>
+      </div>
+      <hr>
+      <div class="container-fluid">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

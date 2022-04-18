@@ -5,5 +5,6 @@ RUN mkdir /app
 WORKDIR /app
 ADD Gemfile /app/Gemfile
 ADD Gemfile.lock /app/Gemfile.lock
+RUN gem install bundler:2.3.11
 RUN bundle install
 ADD . /app

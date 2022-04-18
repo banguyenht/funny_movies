@@ -28,12 +28,15 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'dotenv-rails'
+gem 'devise'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
